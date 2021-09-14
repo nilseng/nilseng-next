@@ -1,5 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const ShootingStars = dynamic(
+  () =>
+    import("../components/random-fun/ShootingStars").then(
+      (mod: any) => mod.ShootingStars
+    ),
+  { ssr: false }
+);
 import styles from "../styles/Home.module.css";
 
 const Landing: NextPage = () => {
@@ -14,7 +23,9 @@ const Landing: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <ShootingStars />
+      </main>
     </div>
   );
 };

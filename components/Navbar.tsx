@@ -15,6 +15,16 @@ const randomFunPopover: INavPopoverProps = {
           name: "Spheres",
           link: "/3D/spheres",
         },
+        {
+          id: "squares",
+          name: "Squares",
+          link: "/3D/squares",
+        },
+        {
+          id: "gravitation",
+          name: "Perfectly inelastic",
+          link: "/3D/falling-ball",
+        },
       ],
     },
   ],

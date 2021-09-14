@@ -21,16 +21,15 @@ export function NavPopover({ buttonText, linkGroups }: INavPopoverProps) {
           <ChevronDownIcon height="20" width="20" />
         </div>
       </Popover.Button>
-
       <Popover.Panel
         unmount={false}
-        className="absolute z-10 rounded font-light text-sm text-gray-50 bg-gray-800 py-2 ml-6"
+        className="absolute z-10 rounded font-light text-sm text-gray-50 bg-gray-800 py-2"
       >
         {linkGroups.map((linkGroup) => (
           <div key={linkGroup.id} className="flex flex-col">
             {linkGroup.links.map((linkItem) => (
               <Link key={linkItem.id} href={linkItem.link}>
-                <a className="hover:bg-indigo-900 px-4 py-2 sm:px-6">
+                <a className="hover:bg-gray-700 px-4 py-2 sm:px-6">
                   {linkItem.name}
                 </a>
               </Link>
