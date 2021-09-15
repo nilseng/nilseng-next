@@ -1,8 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import dynamic from "next/dynamic";
-
+import React from "react";
 import BlogPost from "../components/BlogPost";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const ShootingStars = dynamic(
   () =>
@@ -12,26 +11,13 @@ const ShootingStars = dynamic(
   { ssr: false }
 );
 
-const Landing: NextPage = () => {
+const Projects = () => {
   return (
-    <div>
-      <Head>
-        <title>Teodor&apos;s Portfolio</title>
-        <meta
-          name="description"
-          content="Teodor's portfolio, blog and random stuff."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <ShootingStars />
-        <div className="sm:container xl:px-60 mx-auto">
-          <a
-            href="https://www.backcountrybook.com"
-            target="__blank"
-            style={{ textDecoration: "none" }}
-          >
+    <>
+      <ShootingStars />
+      <div className="sm:container xl:px-60 mx-auto">
+        <Link href="https://www.backcountrybook.com">
+          <a target="__blank" style={{ textDecoration: "none" }}>
             <BlogPost
               content={[
                 `BackcountryBook - an application for exploring and sharing backcountry skiing experiences. Share routes and images. Explore mountains in 2D or 3D.`,
@@ -40,11 +26,9 @@ const Landing: NextPage = () => {
               picture="/images/backcountrybook.png"
             />
           </a>
-          <a
-            href="https://norske-aksjer.herokuapp.com"
-            target="__blank"
-            style={{ textDecoration: "none" }}
-          >
+        </Link>
+        <Link href="https://norske-aksjer.herokuapp.com">
+          <a target="__blank" style={{ textDecoration: "none" }}>
             <BlogPost
               content={[
                 `Norske aksjer - Search for and find all Norwegian companies and their shareholders.`,
@@ -53,11 +37,9 @@ const Landing: NextPage = () => {
               picture="/images/norske_aksjer.png"
             />
           </a>
-          <a
-            href="https://www.purewacc.com"
-            target="__blank"
-            style={{ textDecoration: "none" }}
-          >
+        </Link>
+        <Link href="https://www.purewacc.com">
+          <a target="__blank" style={{ textDecoration: "none" }}>
             <BlogPost
               content={[
                 `Pure Weighted Average Cost of Capital - an application simplifying calculation and distribution of WACCs for multi market and multi industry projects.`,
@@ -66,23 +48,21 @@ const Landing: NextPage = () => {
               picture="/images/purewacc.png"
             />
           </a>
-          <a
-            href="https://www.pureokrs.com"
-            target="__blank"
-            style={{ textDecoration: "none" }}
-          >
+        </Link>
+        <Link href="https://www.pureokrs.com">
+          <a target="__blank" style={{ textDecoration: "none" }}>
             <BlogPost
               content={[
                 `Pure Objectives and Key Result - a goal management application.`,
                 `Stack: Angular, Node.js, Express, MongoDB`,
               ]}
-              picture="/images/pureokrs.png"
+              picture="pureokrs.png"
             />
           </a>
-        </div>
-      </main>
-    </div>
+        </Link>
+      </div>
+    </>
   );
 };
 
-export default Landing;
+export default Projects;

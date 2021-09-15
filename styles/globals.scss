@@ -19,6 +19,21 @@ a {
   box-sizing: border-box;
 }
 
+.image-container {
+  width: 100%;
+
+  > div {
+    position: relative !important;
+  }
+
+  .image {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: auto !important;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
