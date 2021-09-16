@@ -25,17 +25,22 @@ export function NavPopover({ buttonText, linkGroups }: INavPopoverProps) {
         unmount={false}
         className="absolute z-10 rounded font-light text-sm text-gray-50 bg-gray-800 py-2"
       >
-        {linkGroups.map((linkGroup) => (
-          <div key={linkGroup.id} className="flex flex-col">
-            {linkGroup.links.map((linkItem) => (
-              <Link key={linkItem.id} href={linkItem.link}>
-                <a className="hover:bg-gray-700 px-4 py-2 sm:px-6">
-                  {linkItem.name}
-                </a>
-              </Link>
-            ))}
-          </div>
-        ))}
+        {({ close }) =>
+          linkGroups.map((linkGroup) => (
+            <div key={linkGroup.id} className="flex flex-col">
+              {linkGroup.links.map((linkItem) => (
+                <Link key={linkItem.id} href={linkItem.link}>
+                  <a
+                    className="hover:bg-gray-700 px-4 py-2 sm:px-6"
+                    onClick={() => close()}
+                  >
+                    {linkItem.name}
+                  </a>
+                </Link>
+              ))}
+            </div>
+          ))
+        }
       </Popover.Panel>
     </Popover>
   );
