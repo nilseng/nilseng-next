@@ -2,7 +2,7 @@ import "../styles/globals.scss";
 import type { AppProps } from "next/app";
 import { Navbar } from "../components/Navbar";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function NilsengApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Navbar />
@@ -10,4 +10,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-export default MyApp;
+export default NilsengApp;

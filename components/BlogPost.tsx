@@ -37,6 +37,7 @@ const BlogPost = ({
         <div className="relative image-container mt-4">
           <Image
             src={picture}
+            quality={100}
             className="image pb-8"
             alt={`${title} image`}
             layout="fill"

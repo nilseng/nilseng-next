@@ -12,13 +12,13 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { throttle } from "lodash-es";
 
 import Spheres from "../../components/3D/Spheres";
+import Boxes from "../../components/3D/Boxes";
 
 import styles from "./3D.module.scss";
 
 const sceneContentMap: { [key: string]: JSX.Element } = {
   spheres: <Spheres />,
-  /*  boxes: <Boxes />,
-    house: <House />, */
+  boxes: <Boxes />,
 };
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
