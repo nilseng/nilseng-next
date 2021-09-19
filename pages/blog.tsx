@@ -23,7 +23,7 @@ const Blog = () => {
             <a className="text-purple-500">email</a>
           </Link>{" "}
           if you&apos;re interested in one of my projects or just to tell me how
-          on earth you&apos;ve happened to end up on this site.
+          on earth you happened to end up on this site.
         </div>
         <BlogPost
           id="about-you"
