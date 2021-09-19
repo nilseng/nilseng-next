@@ -8,6 +8,7 @@ interface IProps {
   picture?: string;
   link?: string;
   externalUrl?: string;
+  id?: string;
 }
 
 const BlogPost = ({
@@ -17,11 +18,13 @@ const BlogPost = ({
   picture,
   link,
   externalUrl,
+  id,
 }: IProps) => {
   const router = useRouter();
 
   return (
     <div
+      id={id}
       className="w-full relative sm:p-10 p-6 my-8"
       onClick={() => (link ? router.push(link) : null)}
       style={{

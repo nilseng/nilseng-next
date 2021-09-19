@@ -26,6 +26,19 @@ const Blog = () => {
           on earth you&apos;ve happened to end up on this site.
         </div>
         <BlogPost
+          id="about-you"
+          date="2021/09/19"
+          title="It's not me, it's you"
+          link="/about-you"
+          content={[
+            `Most web sites have an 'about us' section or similar. I've done it the other way around and created an 'about you' page where you can see some
+            of the information that your browser reveals about you. It's not a lot really - just some information about your browser, potentially your device and
+            your location if you allow it.
+            `,
+          ]}
+        />
+        <BlogPost
+          id="nilseng@next"
           date="2021/09/19"
           title="nilseng.com @ Next.js"
           content={[
@@ -37,6 +50,7 @@ const Blog = () => {
           ]}
         />
         <BlogPost
+          id="aksjegrafen"
           date="2021/09/19"
           title="The Norwegian Stock Market at a Glance (or at least one third of it...)"
           picture="/images/stock_graph.png"
@@ -55,6 +69,7 @@ const Blog = () => {
           externalUrl="https://norske-aksjer.herokuapp.com"
         />
         <BlogPost
+          id="github-pages"
           date="2021/04/14"
           title="Github Pages"
           content={[
@@ -70,6 +85,7 @@ const Blog = () => {
           ]}
         />
         <BlogPost
+          id="inelastic"
           date="2020/10/25"
           title="Basic physics + three.js"
           content={[
@@ -82,12 +98,14 @@ const Blog = () => {
           link="/three/ball"
         />
         <BlogPost
+          id="apartment"
           date="2020/10/25"
           title="Apartment sold!"
           picture="/images/apartment.jpg"
           content={["I sold my cute 25 square meter apartment today."]}
         />
         <BlogPost
+          id="hello-world"
           date="2020/10/23"
           title="Hello World!"
           content={["My very first blogpost."]}
