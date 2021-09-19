@@ -27,6 +27,17 @@ const Blog = () => {
         </div>
         <BlogPost
           date="2021/09/19"
+          title="nilseng.com @ Next.js"
+          content={[
+            `As a regular listener of various coding podcasts, it's been a while since I first heard about Next.js, but I never really found the time or motivation
+            to try it. I did now though, and I moved this web site from a single page React app on Github Pages to Next.js and Vercel. I have to say that I really
+            like it so far. It's super nice that the stuff that needs no user or browser interaction is rendered on the server and served to
+            the client only when needed. The deployment process and domain name change on Vercel were also super easy and without hazzle. Now it only remains to
+            be seen if the static site generation (SSG) and server side rendering (SSR) have any effect in the search engines.`,
+          ]}
+        />
+        <BlogPost
+          date="2021/09/19"
           title="The Norwegian Stock Market at a Glance (or at least one third of it...)"
           picture="/images/stock_graph.png"
           content={[
@@ -34,10 +45,11 @@ const Blog = () => {
             This is a measure to increase transparency in the Norwegian financial market. I'm working on an application, currently hosted at 
             https://norske-aksjer.herokuapp.com/, where you can search for any company or shareholder and display the ownership structure in a chart. This is to complement 
             similar services that already exist that haven't made the best of what you can do with this dataset.`,
-            `I plotted the graph you see above with about 80 000 companies and 100 000 ownership relations between companies. This is about
+            `For fun, I plotted the graph you see above with about 80 000 companies and 100 000 ownership relations between companies. This is about
             one third of the full dataset provided by the tax authorities for 2020 (when removing all individuals and organizations that are not stock based).
              Probably not useful at all, but it illustrates the complexity of the financial markets nicely. The graph is directed and cyclic. It's created using 
-             cytoscape in Google Chrome. My MacBook Pro with 16GB memory spent about 3 days to generate it, so I decided not to try to plot the full data set for now.
+             cytoscape with an fcose layout in Google Chrome. My MacBook Pro with 16GB memory spent about 3 days to generate it, so I decided not to try to plot the full data set - at least
+             for now.
              `,
           ]}
         />
@@ -72,7 +84,7 @@ const Blog = () => {
           date="2020/10/25"
           title="Apartment sold!"
           picture="/images/apartment.jpg"
-          content={["I'm selling my my cute 25 square meter apartment today."]}
+          content={["I sold my cute 25 square meter apartment today."]}
         />
         <BlogPost
           date="2020/10/23"
