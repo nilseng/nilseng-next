@@ -52,6 +52,7 @@ const Blog = () => {
              for now.
              `,
           ]}
+          externalUrl="https://norske-aksjer.herokuapp.com"
         />
         <BlogPost
           date="2021/04/14"

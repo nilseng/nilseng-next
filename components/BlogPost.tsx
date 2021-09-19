@@ -56,7 +56,7 @@ const BlogPost = ({
           href={externalUrl}
           target="_blank"
           rel="noreferrer"
-          className="text-sm"
+          className="text-gray-50 text-sm"
         >
           {externalUrl}
         </a>
