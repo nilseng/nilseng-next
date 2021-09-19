@@ -161,16 +161,17 @@ export const ShootingStars = () => {
 
   return (
     <>
-      <Image
-        alt="moon image"
-        src="/images/moon.png"
-        className="absolute top-0 right-0 cursor-pointer m-12"
-        height="2rem"
-        width="2rem"
-        onClick={() =>
-          window.alert("Please be respectful and leave the moon alone!")
-        }
-      />
+      <div className="absolute top-0 right-0 cursor-pointer z-10 mr-12 mt-16">
+        <Image
+          alt="moon image"
+          src="/images/moon.png"
+          height={32}
+          width={32}
+          onClick={() =>
+            window.alert("Please be respectful and leave the moon alone!")
+          }
+        />
+      </div>
       <canvas
         ref={bgCanvasRef}
         className="fixed top-0"
