@@ -21,10 +21,10 @@ export default function useWindowDimensions() {
         }
 
         window.addEventListener('resize', handleResize);
-        screen?.orientation?.addEventListener('orientationchange', handleResize);
+        screen?.orientation?.addEventListener('change', handleResize);
         return () => {
             window.removeEventListener('resize', handleResize)
-            screen?.orientation?.removeEventListener('orientationchange', handleResize);
+            screen?.orientation?.removeEventListener('change', handleResize);
         };
     }, []);
 
