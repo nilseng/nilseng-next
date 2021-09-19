@@ -50,7 +50,7 @@ export const UserInfo = () => {
       {document.referrer && (
         <p className="mt-4">You were referred from {document.referrer}</p>
       )}
-      {cookies && (
+      {cookies?.length > 0 && (
         <>
           <p className="mt-4">Cookies</p>
           {Object.keys(cookies).map((key) => (
