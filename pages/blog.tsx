@@ -26,6 +26,22 @@ const Blog = () => {
           on earth you&apos;ve happened to end up on this site.
         </div>
         <BlogPost
+          date="2021/09/19"
+          title="The Norwegian Stock Market at a Glance (or at least one third of it...)"
+          picture="/images/stock_graph.png"
+          content={[
+            `Every year The Norwegian tax authorities make a dataset with all stock based companies and their shareholders available to anyone who requests it.
+            This is a measure to increase transparency in the Norwegian financial market. I'm working on an application, currently hosted at 
+            https://norske-aksjer.herokuapp.com/, where you can search for any company or shareholder and display the ownership structure in a chart. This is to complement 
+            similar services that already exist that haven't made the best of what you can do with this dataset.`,
+            `I plotted the graph you see above with about 80 000 companies and 100 000 ownership relations between companies. This is about
+            one third of the full dataset provided by the tax authorities for 2020 (when removing all individuals and organizations that are not stock based).
+             Probably not useful at all, but it illustrates the complexity of the financial markets nicely. The graph is directed and cyclic. It's created using 
+             cytoscape in Google Chrome. My MacBook Pro with 16GB memory spent about 3 days to generate it, so I decided not to try to plot the full data set for now.
+             `,
+          ]}
+        />
+        <BlogPost
           date="2021/04/14"
           title="Github Pages"
           content={[
@@ -50,7 +66,7 @@ const Blog = () => {
           using three.js.`,
             "Click here to have a look!",
           ]}
-          link="/3D/falling-ball"
+          link="/three/ball"
         />
         <BlogPost
           date="2020/10/25"
