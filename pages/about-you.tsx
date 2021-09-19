@@ -12,10 +12,10 @@ const Mapbox = dynamic(
 
 const AboutYou = () => {
   return (
-    <div className="sm:container xl:px-60 mx-auto text-gray-50 py-4">
+    <div className="sm:container xl:px-60 mx-auto text-gray-50 p-4">
       <UserInfo />
       <p className="mt-4">Your location:</p>
-      <div className="p-4">
+      <div>
         <Mapbox />
       </div>
     </div>
