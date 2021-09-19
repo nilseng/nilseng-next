@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import UAParser from "ua-parser-js";
+import { useCookies } from "react-cookie";
 
 export const UserInfo = () => {
   const [ua, setUa] = useState<any>();
+  const [cookies] = useCookies();
 
   useEffect(() => {
     setUa(UAParser(navigator.userAgent));
   }, []);
 
-  const handleGeoPosition = (pos: any) => console.log(pos);
-
   return (
     <div>
       <h5 className="font-bold text-xl mt-4">About you</h5>
-      <p className="text-gray-200 text-xs">Just so you know that I know.</p>
+      <p className="text-gray-400 text-xs">Just so you know that I know.</p>
       {ua && (
         <>
           <p className="mt-4">Your browser is {ua.browser?.name}</p>
@@ -50,16 +50,15 @@ export const UserInfo = () => {
       {document.referrer && (
         <p className="mt-4">You were referred from {document.referrer}</p>
       )}
-      {JSON.stringify(
-        navigator.geolocation.getCurrentPosition(
-          handleGeoPosition,
-          (err) => console.log("something went wrong:", err),
-          {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
-          }
-        )
+      {cookies && (
+        <>
+          <p className="mt-4">Cookies</p>
+          {Object.keys(cookies).map((key) => (
+            <p key={key} className="text-xs text-gray-200">
+              {key}: {cookies[key]}
+            </p>
+          ))}
+        </>
       )}
     </div>
   );
