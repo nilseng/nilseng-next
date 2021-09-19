@@ -33,7 +33,7 @@ const Blog = () => {
           content={[
             `Most web sites have an 'about us' section or similar. I've done it the other way around and created an 'about you' page where you can see some
             of the information that your browser reveals about you. It's not a lot really - just some information about your browser, potentially your device and
-            your location if you allow it.
+            your location if you allow it. Click here to see more.
             `,
           ]}
         />
