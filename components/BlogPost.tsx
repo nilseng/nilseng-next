@@ -41,6 +41,8 @@ const BlogPost = ({
           <Image
             src={picture}
             quality={100}
+            placeholder="blur"
+            lazyBoundary="500px"
             className="pb-8"
             alt={`${title} image`}
           />
