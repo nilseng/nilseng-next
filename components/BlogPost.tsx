@@ -5,7 +5,7 @@ interface IProps {
   date?: string;
   title?: string;
   content: string[];
-  picture?: string;
+  picture?: StaticImageData;
   link?: string;
   externalUrl?: string;
   id?: string;
@@ -37,13 +37,12 @@ const BlogPost = ({
         <p className="text-sm text-gray-500">{new Date(date).toDateString()}</p>
       )}
       {picture && (
-        <div className="relative image-container mt-4">
+        <div className="mt-4">
           <Image
             src={picture}
             quality={100}
-            className="image pb-8"
+            className="pb-8"
             alt={`${title} image`}
-            layout="fill"
           />
         </div>
       )}

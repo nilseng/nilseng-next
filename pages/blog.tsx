@@ -3,6 +3,9 @@ import React from "react";
 import BlogPost from "../components/BlogPost";
 import Link from "next/link";
 
+import stock_graph_picture from "../public/images/stock_graph.png";
+import apartment_picture from "../public/images/apartment.jpg";
+
 const ShootingStars = dynamic(
   () =>
     import("../components/random-fun/ShootingStars").then(
@@ -53,7 +56,7 @@ const Blog = () => {
           id="aksjegrafen"
           date="2021/09/19"
           title="The Norwegian Stock Market at a Glance (or at least one third of it...)"
-          picture="/images/stock_graph.png"
+          picture={stock_graph_picture}
           content={[
             `Every year The Norwegian tax authorities make a dataset with all stock based companies and their shareholders available to anyone who requests it.
             This is a measure to increase transparency in the Norwegian financial market. I'm working on an application, currently hosted at 
@@ -101,7 +104,7 @@ const Blog = () => {
           id="apartment"
           date="2020/10/25"
           title="Apartment sold!"
-          picture="/images/apartment.jpg"
+          picture={apartment_picture}
           content={["I sold my cute 25 square meter apartment today."]}
         />
         <BlogPost
