@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import BlogPost from "../components/BlogPost";
 
 import bc_book_img from "../public/images/backcountrybook.png";
-import norske_aksjer_img from "../public/images/norske_aksjer.png";
+import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import purewacc_img from "../public/images/purewacc.png";
 import pureokrs_img from "../public/images/pureokrs.png";
 
@@ -52,10 +52,10 @@ const Landing: NextPage = () => {
           >
             <BlogPost
               content={[
-                `Norske aksjer - Search for and find all Norwegian companies and their shareholders.`,
-                `Built with React, Node.js, Express, MongoDB and more.`,
+                `Aksjegrafen - Search for and find all Norwegian companies and their shareholders. See the data in a graph visualization.`,
+                `Built with Typescript, React, D3.js, Node.js, Express, MongoDB and more.`,
               ]}
-              picture={norske_aksjer_img}
+              picture={aksjegrafen_img}
             />
           </a>
           <a
