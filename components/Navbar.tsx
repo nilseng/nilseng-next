@@ -67,23 +67,29 @@ export const Navbar = () => {
           isMenuOpen ? "" : "hidden"
         }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
       >
-        <div
-          className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto"
-          onClick={() => setIsMenuOpen(false)}
-        >
+        <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
           <Link href="/blog">
-            <a className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white">
+            <a
+              className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Blog
             </a>
           </Link>
           <Link href="/">
-            <a className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white ">
+            <a
+              className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Projects
             </a>
           </Link>
-          <NavPopover {...randomFunPopover} />
+          <NavPopover {...randomFunPopover} setIsMenuOpen={setIsMenuOpen} />
           <Link href="/about-you">
-            <a className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white">
+            <a
+              className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
               About you
             </a>
           </Link>

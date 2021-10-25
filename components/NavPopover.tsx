@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { Popover } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import React from "react";
 
 export interface INavPopoverProps {
   buttonText: string;
   linkGroups: LinkGroup[];
+  setIsMenuOpen?: React.Dispatch<React.SetStateAction<boolean | undefined>>;
 }
 
 interface LinkGroup {
@@ -12,7 +14,11 @@ interface LinkGroup {
   links: { id: string; name: string; link: string }[];
 }
 
-export function NavPopover({ buttonText, linkGroups }: INavPopoverProps) {
+export function NavPopover({
+  buttonText,
+  linkGroups,
+  setIsMenuOpen,
+}: INavPopoverProps) {
   return (
     <Popover>
       <Popover.Button>
@@ -24,6 +30,9 @@ export function NavPopover({ buttonText, linkGroups }: INavPopoverProps) {
       <Popover.Panel
         unmount={false}
         className="absolute z-10 rounded font-light text-sm text-gray-50 bg-gray-800 py-2"
+        onClick={() => {
+          if (setIsMenuOpen) setIsMenuOpen(false);
+        }}
       >
         {({ close }) =>
           linkGroups.map((linkGroup) => (
