@@ -46,7 +46,7 @@ const Landing: NextPage = () => {
             />
           </a>
           <a
-            href="https://norske-aksjer.herokuapp.com"
+            href="https://www.aksjegrafen.com"
             target="__blank"
             style={{ textDecoration: "none" }}
           >
