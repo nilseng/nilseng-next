@@ -4,6 +4,7 @@ import BlogPost from "../components/BlogPost";
 import Link from "next/link";
 
 import stock_graph_picture from "../public/images/stock_graph.png";
+import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import apartment_picture from "../public/images/apartment.jpg";
 
 const ShootingStars = dynamic(
@@ -28,6 +29,22 @@ const Blog = () => {
           if you&apos;re interested in one of my projects or just to tell me how
           on earth you happened to end up on this site.
         </div>
+        <BlogPost
+          id="aksjegrafen"
+          date="2021/10/25"
+          title="Aksjegrafen.com sees the first light of day!"
+          picture={aksjegrafen_img}
+          content={[
+            `After some intensive weekend and evening work, I'm launching the initial version of aksjegrafen.com. You can 
+          now find all Norwegian companies and shareholders and see them in a graph vizualization (or network if you will). Add as many shareholders and investors as
+          you'd like to, and see direct and indirect ownership relationships.  
+          `,
+            `The graph is built using a d3-force simulation and SVGs. This simulation is usually used for complex networks, particle analysis and such,
+          but may just as well be used to position investors and their investments nicely.`,
+            `I'm going for a minimalistic neumorphic design with light and dark themes. `,
+          ]}
+          externalUrl="https://www.aksjegrafen.com"
+        />
         <BlogPost
           id="about-you"
           date="2021/09/19"
