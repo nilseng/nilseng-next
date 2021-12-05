@@ -38,9 +38,7 @@ export const Navbar = () => {
       <Link href="/">
         <a className="flex items-center">
           <AnimatedLogo color="#f8f9fa" height="2rem" width="2rem" />
-          <span className="font-light text-xl text-gray-50 mx-4">
-            Teodor&apos;s Portfolio
-          </span>
+          <span className="font-light text-xl text-gray-50 mx-4">Teodor&apos;s Portfolio</span>
         </a>
       </Link>
       <button
@@ -54,19 +52,10 @@ export const Navbar = () => {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h16"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      <div
-        className={`${
-          isMenuOpen ? "" : "hidden"
-        }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
-      >
+      <div className={`${isMenuOpen ? "" : "hidden"}   w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
         <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
           <Link href="/blog">
             <a
@@ -85,6 +74,14 @@ export const Navbar = () => {
             </a>
           </Link>
           <NavPopover {...randomFunPopover} setIsMenuOpen={setIsMenuOpen} />
+          <Link href="/about-me">
+            <a
+              className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About me
+            </a>
+          </Link>
           <Link href="/about-you">
             <a
               className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"

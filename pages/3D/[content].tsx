@@ -1,13 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { GetStaticProps } from "next";
-import {
-  addTail,
-  Canvas,
-  extend,
-  ReactThreeFiber,
-  useFrame,
-  useThree,
-} from "@react-three/fiber";
+import { addTail, Canvas, extend, ReactThreeFiber, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { throttle } from "lodash-es";
 
@@ -22,10 +15,7 @@ const sceneContentMap: { [key: string]: JSX.Element } = {
 };
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
-  const content =
-    params?.content && typeof params?.content === "string"
-      ? params.content
-      : null;
+  const content = params?.content && typeof params?.content === "string" ? params.content : null;
   return {
     props: {
       content,
@@ -46,10 +36,7 @@ export async function getStaticPaths() {
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      orbitControls: ReactThreeFiber.Object3DNode<
-        OrbitControls,
-        typeof OrbitControls
-      >;
+      orbitControls: ReactThreeFiber.Object3DNode<OrbitControls, typeof OrbitControls>;
     }
   }
 }
@@ -68,10 +55,7 @@ const SceneControls = ({ setFps, sceneContent }: ISceneContentProps) => {
   } = useThree();
 
   let last = Date.now();
-  const fn: any = useMemo(
-    () => throttle((fps) => setFps(fps.toFixed(0)), 60),
-    [setFps]
-  );
+  const fn: any = useMemo(() => throttle((fps) => setFps(fps.toFixed(0)), 60), [setFps]);
 
   useFrame(() => {
     let now = Date.now();
@@ -95,15 +79,25 @@ const Scene = ({ content }: { content: string }) => {
 
   return (
     <div className={styles["scene-container"]}>
-      <div className="w-20 bg-gray-50 absolute rounded m-2 p-2">FPS: {fps}</div>
-      <Canvas>
-        {content && (
-          <SceneControls
-            setFps={setFps}
-            sceneContent={sceneContentMap[content]}
-          />
-        )}
-      </Canvas>
+      <div
+        className="absolute right-10 top-24 flex flex-col justify-center items-center w-40 h-30 bg-white bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-white border-opacity-50 rounded-xl"
+        style={{ zIndex: 1 }}
+      >
+        <div className="text-3xl text-gray-50 rounded m-2">{fps}</div>
+        <div className="text-sm text-white rounded m-2">FPS</div>
+      </div>
+      <div
+        className="absolute left-10 top-24 flex flex-col justify-center w-96 bg-white bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border border-white border-opacity-50 rounded-xl"
+        style={{ zIndex: 1 }}
+      >
+        <div className="text-lg text-gray-50 rounded m-2">About</div>
+        <p className="text-sm text-white rounded m-2">
+          This 3D visualization is created with react-three-fiber which is a React renderer for the JavaScript 3D
+          library Three.js.
+        </p>
+        <p className="text-sm text-white rounded m-2">Scroll to zoom or click and drag to change your point of view.</p>
+      </div>
+      <Canvas>{content && <SceneControls setFps={setFps} sceneContent={sceneContentMap[content]} />}</Canvas>
     </div>
   );
 };
