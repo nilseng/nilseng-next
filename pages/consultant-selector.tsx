@@ -150,7 +150,7 @@ const Page = () => {
                 alignmentBaseline="middle"
                 style={{ userSelect: "none" }}
               >
-                Snurr!
+                Klikk!
               </text>
             </g>
           </g>
