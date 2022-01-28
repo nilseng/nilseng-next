@@ -16,7 +16,7 @@ const Page = () => {
       setIsSpinning(false);
     }, 2000);
     setTimeout(() => {
-      window.alert("Hjulet anbefaler Teodor Nilseng Danielsen!");
+      window.alert("Tilfeldig valgt konsulent: Teodor Nilseng Danielsen!");
     }, 2100);
   };
 
@@ -29,7 +29,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Spin the wheel!</title>
+        <title>Konsulentvelgeren</title>
         <meta name="description" content="Consultant selector." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -59,6 +59,7 @@ const Page = () => {
                 />
               )}
               <circle cx="500" cy="500" r="400" fill="#f8f9fa" opacity={"40%"} />
+              <circle cx="500" cy="500" r="400" stroke="#f8f9fa" strokeWidth={1} strokeOpacity={0.8} fill="none" />
               {isConsultantSelected && <circle cx="900" cy="500" r="10" fill="#00ff00" opacity={"40%"} />}
               <text
                 className={isConsultantSelected ? "font-bold" : ""}
@@ -69,24 +70,78 @@ const Page = () => {
               >
                 Teodor Nilseng Danielsen
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(30 500 500)"
+              />
               <text x="725" y="500" textAnchor="middle" alignmentBaseline="middle" transform="rotate(60 500 500)">
                 En annen konsulent
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(90 500 500)"
+              />
               <text x="725" y="500" textAnchor="middle" alignmentBaseline="middle" transform="rotate(120 500 500)">
                 Reodor Dilseng Nadielsen
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(150 500 500)"
+              />
               <text x="725" y="500" textAnchor="middle" alignmentBaseline="middle" transform="rotate(180 500 500)">
                 En tredje konsulent
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(210 500 500)"
+              />
               <text x="725" y="500" textAnchor="middle" alignmentBaseline="middle" transform="rotate(240 500 500)">
                 Noen André
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(270 500 500)"
+              />
               <text x="725" y="500" textAnchor="middle" alignmentBaseline="middle" transform="rotate(300 500 500)">
                 Noen Tredjé
               </text>
+              <line
+                x1="900"
+                y1="500"
+                x2="100"
+                y2="500"
+                stroke="#f8f9fa"
+                opacity={"40%"}
+                transform="rotate(330 500 500)"
+              />
             </g>
             <g style={{ cursor: "pointer" }} onClick={spin}>
-              <circle cx="500" cy="500" r="50" fill="#f8f9fa" opacity={"40%"} />
+              <circle cx="500" cy="500" r="50" fill="#f8f9fa" opacity={"80%"} />
               <text
                 className="font-bold"
                 x="500"
