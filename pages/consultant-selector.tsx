@@ -1,24 +1,27 @@
 import Head from "next/head";
-import { SVGProps, useRef, useState } from "react";
+import { SVGProps, useEffect, useRef, useState } from "react";
 
 const Page = () => {
   const [isSpinInited, setIsSpinInited] = useState<boolean>(false);
-  const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const animateRef = useRef<SVGAnimateTransformElement>(null);
   const [isConsultantSelected, setIsConsultantSelected] = useState<boolean>(false);
 
   const spin = () => {
     setIsConsultantSelected(false);
     if (!isSpinInited) setIsSpinInited(true);
-    animateRef.current?.beginElement();
-    setIsSpinning(!isSpinning);
     setTimeout(() => {
       setIsConsultantSelected(true);
     }, 2000);
     setTimeout(() => {
-      window.alert("Ikke helt tilfeldig valgt konsulent er Teodor Nilseng Danielsen");
+      window.alert("Hjulet anbefaler Teodor Nilseng Danielsen!");
     }, 2100);
   };
+
+  useEffect(() => {
+    if (isSpinInited) {
+      animateRef.current?.beginElement();
+    }
+  }, [isSpinInited]);
 
   return (
     <>
@@ -46,9 +49,9 @@ const Page = () => {
                   type="rotate"
                   from="0 500 500"
                   to="360 500 500"
+                  begin="0"
                   dur="1s"
                   repeatCount="2"
-                  restart="always"
                 />
               )}
               <circle cx="500" cy="500" r="400" fill="#f8f9fa" opacity={"40%"} />
