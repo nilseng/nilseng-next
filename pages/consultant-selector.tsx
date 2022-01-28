@@ -141,7 +141,7 @@ const Page = () => {
               />
             </g>
             <g style={{ cursor: "pointer" }} onClick={spin}>
-              <circle cx="500" cy="500" r="50" fill="#f8f9fa" opacity={"80%"} />
+              <circle cx="500" cy="500" r="100" fill="#f8f9fa" opacity={"80%"} />
               <text
                 className="font-bold"
                 x="500"
@@ -150,7 +150,7 @@ const Page = () => {
                 alignmentBaseline="middle"
                 style={{ userSelect: "none" }}
               >
-                Klikk!
+                Klikk her!
               </text>
             </g>
           </g>
