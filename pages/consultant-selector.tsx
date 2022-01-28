@@ -3,14 +3,17 @@ import { SVGProps, useEffect, useRef, useState } from "react";
 
 const Page = () => {
   const [isSpinInited, setIsSpinInited] = useState<boolean>(false);
+  const [isSpinning, setIsSpinning] = useState<boolean>(false);
   const animateRef = useRef<SVGAnimateTransformElement>(null);
   const [isConsultantSelected, setIsConsultantSelected] = useState<boolean>(false);
 
   const spin = () => {
     setIsConsultantSelected(false);
     if (!isSpinInited) setIsSpinInited(true);
+    setIsSpinning(true);
     setTimeout(() => {
       setIsConsultantSelected(true);
+      setIsSpinning(false);
     }, 2000);
     setTimeout(() => {
       window.alert("Hjulet anbefaler Teodor Nilseng Danielsen!");
@@ -18,10 +21,10 @@ const Page = () => {
   };
 
   useEffect(() => {
-    if (isSpinInited) {
+    if (isSpinInited && isSpinning) {
       animateRef.current?.beginElement();
     }
-  }, [isSpinInited]);
+  }, [isSpinInited, isSpinning]);
 
   return (
     <>
@@ -52,6 +55,7 @@ const Page = () => {
                   begin="0"
                   dur="1s"
                   repeatCount="2"
+                  restart="always"
                 />
               )}
               <circle cx="500" cy="500" r="400" fill="#f8f9fa" opacity={"40%"} />
