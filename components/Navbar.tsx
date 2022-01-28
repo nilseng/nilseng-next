@@ -27,6 +27,16 @@ const randomFunPopover: INavPopoverProps = {
         },
       ],
     },
+    {
+      id: "Super random",
+      links: [
+        {
+          id: "consultant-selector",
+          name: "Consultant Selector",
+          link: "/consultant-selector",
+        },
+      ],
+    },
   ],
 };
 
