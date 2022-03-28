@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { SVGProps, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Page = () => {
   const [isSpinInited, setIsSpinInited] = useState<boolean>(false);
