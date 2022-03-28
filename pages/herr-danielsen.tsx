@@ -27,8 +27,10 @@ const Page = () => {
         )}
       </div>
       {city && city.toLowerCase() === "bodø" && (
-        <div className="flex flex-col justify-center w-full text-gray-50 bg-gray-700 h-screen">
-          <Image src={bodo_glimt} quality={100} alt={`Pappa 69 år image`} />
+        <div className="flex flex-col justify-center items-center w-full text-gray-50 bg-gray-700 h-screen">
+          <div style={{ width: "853px", height: "480px" }}>
+            <Image src={bodo_glimt} quality={100} width={"853px"} height={"480px"} alt={`Pappa 69 år image`} />
+          </div>
           <div className="px-2 py-10">
             <p>Vi vil gjerne gi deg tur til Bodø for å se litt fotball 7. april😄</p>
             <p className="pt-4">Vi du ser nøye på GIFen, ser du kanskje kjentfolk😉</p>
