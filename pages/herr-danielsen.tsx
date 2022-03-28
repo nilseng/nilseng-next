@@ -32,7 +32,10 @@ const Page = () => {
             <Image src={bodo_glimt} quality={100} width={"853px"} height={"480px"} alt={`Pappa 69 år image`} />
           </div>
           <div className="px-2 py-10">
-            <p>Vi vil gjerne gi deg tur til Bodø for å se litt fotball 7. april😄</p>
+            <p>
+              Vi vil gjerne gi deg tur til Bodø for å se litt fotball 7. april😄 Vi har kjøpt billetter til deg og
+              mamma, samt fly opp, tog ned og rom på Clarion hotell. God tur!
+            </p>
             <p className="pt-4">Vi du ser nøye på GIFen, ser du kanskje kjentfolk😉</p>
           </div>
         </div>
