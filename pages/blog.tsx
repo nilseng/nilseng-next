@@ -1,17 +1,13 @@
 import dynamic from "next/dynamic";
-import React from "react";
-import BlogPost from "../components/BlogPost";
 import Link from "next/link";
+import BlogPost from "../components/BlogPost";
 
-import stock_graph_picture from "../public/images/stock_graph.png";
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import apartment_picture from "../public/images/apartment.jpg";
+import stock_graph_picture from "../public/images/stock_graph.png";
 
 const ShootingStars = dynamic(
-  () =>
-    import("../components/random-fun/ShootingStars").then(
-      (mod: any) => mod.ShootingStars
-    ),
+  () => import("../components/random-fun/ShootingStars").then((mod: any) => mod.ShootingStars),
   { ssr: false }
 );
 
@@ -21,14 +17,26 @@ const Blog = () => {
       <ShootingStars />
       <div className="sm:container xl:px-60 mx-auto">
         <div className="text-center text-gray-500 rounded text-sm p-4 my-4">
-          I&apos;m Teodor Nilseng Danielsen. A Norwegian software engineer and
-          economist. Send me an{" "}
+          I&apos;m Teodor Nilseng Danielsen. A Norwegian software engineer and economist. Send me an{" "}
           <Link href="mailto:teodor.nilseng@gmail.com">
             <a className="text-purple-500">email</a>
           </Link>{" "}
-          if you&apos;re interested in one of my projects or just to tell me how
-          on earth you happened to end up on this site.
+          if you&apos;re interested in one of my projects or just to say hi👋
         </div>
+        <BlogPost
+          id="freelance-y1"
+          date="2023/05/01"
+          title="Reflections on freelancing year 1🧐"
+          content={[
+            `My first year as a freelancer has been just what I hoped for - lots of learning, interesting challenges and good 
+            people.`,
+            `I got my first small project within education after about a month, and then a one year contract with a 
+            customer in the financial industry after yet another month. The process of getting projects is definitely not
+            the coolest part of freelancing, but I learned fair bit about the potential customers and projects out there.
+            In the end it was definitely worth the wait and the effort - both financially and
+            otherwise💸🤓.`,
+          ]}
+        />
         <BlogPost
           id="aksjegrafen"
           date="2021/10/25"
@@ -124,12 +132,7 @@ const Blog = () => {
           picture={apartment_picture}
           content={["I sold my cute 25 square meter apartment today."]}
         />
-        <BlogPost
-          id="hello-world"
-          date="2020/10/23"
-          title="Hello World!"
-          content={["My very first blogpost."]}
-        />
+        <BlogPost id="hello-world" date="2020/10/23" title="Hello World!" content={["My very first blogpost."]} />
       </div>
     </>
   );
