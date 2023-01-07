@@ -25,7 +25,7 @@ const Blog = () => {
         </div>
         <BlogPost
           id="freelance-y1"
-          date="2023/05/01"
+          date="2023/01/05"
           title="Reflections on freelancing year 1🧐"
           content={[
             `My first year as a freelancer has been just what I hoped for - lots of learning, interesting challenges and good 
