@@ -26,15 +26,28 @@ const Blog = () => {
         <BlogPost
           id="freelance-y1"
           date="2023/01/05"
-          title="Reflections on freelancing year 1🧐"
+          title="Reflections on freelancing Y1 💼👨🏻‍💻"
           content={[
-            `My first year as a freelancer has been just what I hoped for - lots of learning, interesting challenges and good 
-            people.`,
-            `I got my first small project within education after about a month, and then a one year contract with a 
-            customer in the financial industry after yet another month. The process of getting projects is definitely not
-            the coolest part of freelancing, but I learned fair bit about the potential customers and projects out there.
-            In the end it was definitely worth the wait and the effort - both financially and
-            otherwise💸🤓.`,
+            `My first year as an independent software development consultant has been just what I hoped for - lots of learning, 
+            interesting challenges and good people.`,
+            `The first step when starting up as an independent consultant is deciding on whether and how to set up a company.
+            With the Norwegian wellfare system the best choice is to go for a stock based company (AS), hire yourself as an 
+            employee and have the same rights to social security as you would being employed somewhere else. With the accounting 
+            software Fiken, accounting and administration is easy.`,
+            `The more difficult and important second step is to land a project which is both interesting and has acceptable rates.
+            For me it was without doubt worth it to get help from Witted - a company connecting customers and freelancers. Since
+            I'm neither good at nor interested in sales and marketing, it made sense to get someone else to handle this part and
+            I expect it would for most developers. I got my first small project within education after about a month, and then a 
+            one year contract with a customer in the financial industry after another month. The process of getting projects is 
+            definitely not the coolest part of freelancing, but in the end it was definitely worth the wait and the effort - both 
+            financially and otherwise💸🤓.`,
+            `My main project in 2022 was building a web application for the fintech company Kredd. The application allows 
+            individuals to apply for loans and makes automated decisions based on available data about the customer. The application
+            was built with an Angular frontend and Node.js backend both written in TypeScript. The project is hosted on AWS. The 
+            Kredd team consists of very few, but skilled and intelligent people, which means both high impact and responsibility - 
+            a perfect combination for growth and interesting work🎉.`,
+            `Now, I'm off looking for new projects, crossing my fingers that the second year of freelancing will be about as good
+            as the first.🤞🚀`,
           ]}
         />
         <BlogPost
