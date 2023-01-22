@@ -30,29 +30,31 @@ const AGamleOdaPage = () => {
             </button>
           </div>
           <div id="gaven" className="h-full w-full flex flex-col justify-center items-center">
-            <div>
-              <Image
-                src={stortindImg}
-                quality={100}
-                placeholder="blur"
-                lazyBoundary="500px"
-                className="pb-8"
-                alt={`Stortind image`}
-              />
-            </div>
-            <div className="text-sm text-center text-gray-200 p-6">
-              <p className="pb-4">
-                Kaja og jeg vil gi deg guidet klatretur på dette fjellet neste gang du er i Efjorden. Uten snø da. Og
-                hvis du tør. Hvis ikke finner vi noe annet før den ekte bursdagen. Men ellers prøver vi å få til at vi
-                begge blir med på turen! ⛰️🧗🙈
-              </p>
-              <p>
-                Mer informasjon er{" "}
-                <a className="font-bold" href="https://www.hvitblikk.com/guidetklatretur/eidetind-kort-dag">
-                  her
-                </a>
-                😃
-              </p>
+            <div className="w-full max-w-xl">
+              <div>
+                <Image
+                  src={stortindImg}
+                  quality={100}
+                  placeholder="blur"
+                  lazyBoundary="500px"
+                  className="pb-8 rounded-2xl"
+                  alt={`Stortind image`}
+                />
+              </div>
+              <div className="text-sm text-center text-gray-200 p-6">
+                <p className="pb-4">
+                  Kaja og jeg vil gi deg guidet klatretur på dette fjellet neste gang du er i Efjorden. Uten snø da. Og
+                  hvis du tør. Hvis ikke finner vi noe annet før den ekte bursdagen. Men ellers prøver vi å få til at vi
+                  begge blir med på turen! ⛰️🧗🙈
+                </p>
+                <p>
+                  Mer informasjon er{" "}
+                  <a className="font-bold" href="https://www.hvitblikk.com/guidetklatretur/eidetind-kort-dag">
+                    her
+                  </a>
+                  😃
+                </p>
+              </div>
             </div>
           </div>
         </div>
