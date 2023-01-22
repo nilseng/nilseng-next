@@ -34,7 +34,6 @@ const AGamleOdaPage = () => {
               <div>
                 <Image
                   src={stortindImg}
-                  quality={100}
                   placeholder="blur"
                   lazyBoundary="500px"
                   className="pb-8 rounded-2xl"
