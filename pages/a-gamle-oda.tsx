@@ -24,7 +24,7 @@ const AGamleOdaPage = () => {
       {hasOdaClicked ? (
         <div className="h-full w-full">
           <div className="h-full w-full flex flex-col justify-around items-center">
-            <p className="text-3xl text-white text-center p-4">Gratulerer med 30-årsdagen, oda!🤗🥳</p>
+            <p className="text-3xl text-white text-center p-4">Gratulerer med 30-årsdagen, Oda!🤗🥳</p>
             <button className="text-white bg-purple-900 rounded-xl p-4">
               <Link href="/a-gamle-oda#gaven">Til gaven</Link>
             </button>
