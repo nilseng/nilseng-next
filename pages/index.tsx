@@ -6,6 +6,7 @@ import BlogPost from "../components/BlogPost";
 
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import bc_book_img from "../public/images/backcountrybook.png";
+import big5ish_img from "../public/images/big5ish.png";
 import pureokrs_img from "../public/images/pureokrs.png";
 import purewacc_img from "../public/images/purewacc.png";
 
@@ -29,10 +30,21 @@ const Landing: NextPage = () => {
             <BlogPost
               title="aksjegrafen.com"
               content={[
-                `Aksjegrafen - Search for and find all Norwegian companies and their shareholders. See the data in a graph visualization.`,
+                `Aksjegrafen - Search for and find all Norwegian companies and their shareholders. See the data in a graph
+                 visualization.`,
                 `Built with Typescript, React, D3.js, Node.js, Express, MongoDB and more.`,
               ]}
               picture={aksjegrafen_img}
+            />
+          </a>
+          <a href="https://big5ish.herokuapp.com/" target="__blank" style={{ textDecoration: "none" }}>
+            <BlogPost
+              title="Big5ish"
+              content={[
+                `Big5ish - A personality test for teams based on the well known Big 5 test.`,
+                `Built with TypeScript, React, Tailwind, Node.js, Express, Apollo and Graphql.`,
+              ]}
+              picture={big5ish_img}
             />
           </a>
           <a href="https://www.pureokrs.com" target="__blank" style={{ textDecoration: "none" }}>
