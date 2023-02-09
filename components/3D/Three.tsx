@@ -1,11 +1,6 @@
-import dynamic from "next/dynamic";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { createMesh, IMeshConfig } from "./utils";
-
-const ShootingStars = dynamic(() => import("../random-fun/ShootingStars").then((mod: any) => mod.ShootingStars), {
-  ssr: false,
-});
 
 interface IScene {
   id: string;
@@ -103,7 +98,6 @@ const Three = ({ config }: any) => {
 
   return (
     <>
-      <ShootingStars />
       <div
         ref={mainEl}
         className="h-100 w-100"
