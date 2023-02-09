@@ -21,8 +21,7 @@
         "material": {
           "type": "standard",
           "parameters": {
-            "color": "#212529",
-            "opacity": 0.1
+            "color": "#ffffff"
           }
         },
         "position": [0, -2, 0],
