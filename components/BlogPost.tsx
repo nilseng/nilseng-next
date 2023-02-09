@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useRouter } from "next/router";
 
 interface IProps {
@@ -11,15 +11,7 @@ interface IProps {
   id?: string;
 }
 
-const BlogPost = ({
-  date,
-  title,
-  content,
-  picture,
-  link,
-  externalUrl,
-  id,
-}: IProps) => {
+const BlogPost = ({ date, title, content, picture, link, externalUrl, id }: IProps) => {
   const router = useRouter();
 
   return (
@@ -33,9 +25,7 @@ const BlogPost = ({
       }}
     >
       {title && <h5 className="text-xl text-gray-50 mb-2">{title}</h5>}
-      {date && (
-        <p className="text-sm text-gray-500">{new Date(date).toDateString()}</p>
-      )}
+      {date && <p className="text-sm text-gray-500">{new Date(date).toDateString()}</p>}
       {picture && (
         <div className="mt-4">
           <Image
@@ -56,12 +46,7 @@ const BlogPost = ({
         ))}
       </div>
       {externalUrl && (
-        <a
-          href={externalUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-50 text-sm"
-        >
+        <a href={externalUrl} target="_blank" rel="noreferrer" className="text-gray-50 text-sm">
           {externalUrl}
         </a>
       )}
