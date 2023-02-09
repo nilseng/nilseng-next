@@ -1,8 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { ShootingStars } from "../random-fun/ShootingStars";
-import scenes from "./scenes.json";
 import { createMesh, IMeshConfig } from "./utils";
+
+const ShootingStars = dynamic(() => import("../random-fun/ShootingStars").then((mod: any) => mod.ShootingStars), {
+  ssr: false,
+});
 
 interface IScene {
   id: string;
@@ -27,10 +30,7 @@ let renderer: any,
 const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
   if (!config) return;
 
-  camera = new THREE.PerspectiveCamera(
-    config.camera?.fov,
-    window.innerWidth / window.innerHeight
-  );
+  camera = new THREE.PerspectiveCamera(config.camera?.fov, window.innerWidth / window.innerHeight);
   camera.position.z = config.camera?.position?.z;
 
   scene = new THREE.Scene();
@@ -79,13 +79,8 @@ const animate = () => {
     requestId = requestAnimationFrame(animate);
     sphere.position.x += 0.05;
     sphere.position.y +=
-      sphere.position.y >= -1.5 || sphere.position.x > 2.5
-        ? v0y * (1 / 60) + (1 / 2) * -9.81 * Math.pow(1 / 60, 2)
-        : 0;
-    v0y =
-      sphere.position.y >= -1.5 || sphere.position.x > 2.5
-        ? v0y - 9.81 * (1 / 60)
-        : 0;
+      sphere.position.y >= -1.5 || sphere.position.x > 2.5 ? v0y * (1 / 60) + (1 / 2) * -9.81 * Math.pow(1 / 60, 2) : 0;
+    v0y = sphere.position.y >= -1.5 || sphere.position.x > 2.5 ? v0y - 9.81 * (1 / 60) : 0;
     if (sphere.position.y < -4) {
       sphere.position.y = 4;
       sphere.position.x = -4;
