@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { PlaneGeometry, SphereGeometry } from "three";
+import { DirectionalLight, PlaneGeometry, PointLight, SphereGeometry } from "three";
 
 export const getRandomColor = () => {
   var letters = "0123456789ABCDEF";
@@ -28,7 +28,9 @@ export interface IMeshConfig {
   };
   position?: [number, number, number];
   receiveShadow?: boolean;
+  castShadow?: boolean;
   rotation?: [number, number, number];
+  animations: string[];
 }
 
 const geometryTypeMap = {
@@ -53,4 +55,23 @@ export const createMesh = (config: IMeshConfig): THREE.Mesh => {
     mesh.rotation.set(...mappedRotation);
   }
   return mesh;
+};
+
+export const createPointLight = () => {
+  const pointLight = new PointLight(0xffffff, 2);
+  pointLight.position.set(-5, -10, 20);
+  pointLight.castShadow = true;
+
+  pointLight.shadow.mapSize.width = 2000;
+  pointLight.shadow.mapSize.height = 2000;
+  pointLight.shadow.camera.near = 0.5;
+  pointLight.shadow.camera.far = 500;
+  return pointLight;
+};
+
+export const createDirectionalLight = () => {
+  const directionalLight = new DirectionalLight(0xffffff, 1);
+  directionalLight.position.set(0, 480, 0);
+  directionalLight.castShadow = true;
+  return directionalLight;
 };

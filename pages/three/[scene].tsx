@@ -1,11 +1,10 @@
 import { GetStaticProps } from "next";
 
 import scenes from "../../components/3D/scenes.json";
-import Three from "../../components/3D/Three";
+import Three, { IScene } from "../../components/3D/Three";
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
-  const scene =
-    params?.scene && typeof params?.scene === "string" ? params.scene : null;
+  const scene = params?.scene ? params.scene : null;
   return {
     props: {
       scene,
@@ -24,7 +23,7 @@ export async function getStaticPaths() {
 }
 
 const threeScene = ({ scene }: { scene: "ball" }) => {
-  return <Three config={scenes[scene]} />;
+  return <Three config={scenes[scene] as IScene} />;
 };
 
 export default threeScene;

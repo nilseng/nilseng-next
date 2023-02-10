@@ -3,7 +3,9 @@
     "camera": {
       "fov": 50,
       "position": {
-        "z": 10
+        "z": 10,
+        "x": 0,
+        "y": 0
       }
     },
     "meshes": [
@@ -27,6 +29,27 @@
         "position": [0, -2, 0],
         "receiveShadow": true,
         "rotation": [-0.5, 0, 0]
+      },
+      {
+        "name": "ball",
+        "geometry": {
+          "type": "sphere",
+          "parameters": {
+            "radius": 0.5,
+            "widthSegments": 16,
+            "heightSegments": 16
+          }
+        },
+        "material": {
+          "type": "standard",
+          "parameters": {
+            "color": "#ffffff"
+          }
+        },
+        "position": [-4, 4, 0],
+        "receiveShadow": true,
+        "castShadow": true,
+        "animations": ["accelerateSphere"]
       }
     ]
   }
