@@ -1,14 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  Camera,
-  Mesh,
-  MeshStandardMaterial,
-  PCFSoftShadowMap,
-  PerspectiveCamera,
-  Scene,
-  SphereGeometry,
-  WebGLRenderer,
-} from "three";
+import { Camera, Mesh, PCFSoftShadowMap, PerspectiveCamera, Scene, WebGLRenderer } from "three";
 import { createDirectionalLight, createMesh, createPointLight, IMeshConfig } from "./utils";
 
 export interface IScene {
@@ -20,7 +11,7 @@ export interface IScene {
       z: number;
     };
   };
-  meshes?: IMeshConfig[];
+  meshes: IMeshConfig[];
 }
 
 const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
@@ -29,20 +20,13 @@ const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
 
   const scene = new Scene();
 
-  if (config.meshes) {
-    for (const meshConfig of config.meshes) {
-      const mesh = createMesh(meshConfig);
-      scene.add(mesh);
-    }
+  const meshes = [];
+
+  for (const meshConfig of config.meshes) {
+    const mesh = createMesh(meshConfig);
+    meshes.push({ name: meshConfig.name, mesh });
+    scene.add(mesh);
   }
-
-  const sphereGeometry = new SphereGeometry(0.5, 16, 16);
-  const sphereMaterial = new MeshStandardMaterial({ color: "#faf8f9" });
-
-  const sphere = new Mesh<SphereGeometry, MeshStandardMaterial>(sphereGeometry, sphereMaterial);
-  sphere.castShadow = true;
-  sphere.position.set(-4, 4, 0);
-  scene.add(sphere);
 
   scene.add(createPointLight());
   scene.add(createDirectionalLight());
@@ -55,7 +39,7 @@ const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
   renderer.render(scene, camera);
   mainEl.current?.appendChild(renderer.domElement);
 
-  return { sphere, renderer, scene, camera };
+  return { renderer, scene, camera, meshes };
 };
 
 const accelerateSphere = (sphere: Mesh, v0y: number = 0) => {
@@ -80,21 +64,17 @@ const animationMap: { [key: string]: InitialAnimationFunction } = {
 
 const animate = ({
   renderer,
-  sphere,
   scene,
   camera,
   animations,
 }: {
   renderer: WebGLRenderer;
   scene: Scene;
-  sphere: THREE.Mesh<THREE.SphereGeometry, THREE.MeshStandardMaterial>;
   camera: Camera;
   animations: (() => AnimationFunction)[];
 }) => {
   const nextAnimations = animations.map((animation) => animation());
-  const requestId = requestAnimationFrame(() =>
-    animate({ renderer, sphere, scene, camera, animations: nextAnimations })
-  );
+  const requestId = requestAnimationFrame(() => animate({ renderer, scene, camera, animations: nextAnimations }));
   renderer.render(scene, camera);
   return requestId;
 };
@@ -103,13 +83,17 @@ const Three = ({ config }: { config: IScene }) => {
   const mainEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const { sphere, renderer, scene, camera } = init(mainEl, config);
+    const { renderer, scene, camera, meshes } = init(mainEl, config);
     const animations = (
       config.meshes
-        ?.map((mesh) => mesh.animations?.map((animationName) => () => animationMap[animationName](createMesh(mesh))))
+        ?.map((meshConfig) => {
+          return meshConfig.animations?.map(
+            (animationName) => () => animationMap[animationName](meshes.find((m) => m.name === meshConfig.name)?.mesh!)
+          );
+        })
         .flat() ?? []
     ).filter((a) => !!a);
-    const requestId = animate({ sphere, renderer, scene, camera, animations });
+    const requestId = animate({ renderer, scene, camera, animations });
     return () => cancelAnimationFrame(requestId);
   }, [mainEl, config]);
 
