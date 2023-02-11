@@ -59,7 +59,7 @@ type InitialAnimationFunction = (mesh: Mesh, ...args: number[]) => AnimationFunc
 type AnimationFunction = () => AnimationFunction;
 
 const animationMap: { [key: string]: InitialAnimationFunction } = {
-  accelerateSphere: accelerateSphere,
+  accelerateSphere,
 };
 
 const animate = ({
