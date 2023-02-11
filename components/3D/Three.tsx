@@ -15,31 +15,50 @@ export interface IScene {
 }
 
 const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
-  const camera = new PerspectiveCamera(config.camera?.fov, window.innerWidth / window.innerHeight);
-  camera.position.z = config.camera.position.z;
-
   const scene = new Scene();
 
-  const meshes = [];
+  const camera = createCamera(config);
+  const meshes = createAndAddMeshes(config, scene);
+  const animations = createAnimations(config, meshes);
 
+  scene.add(createPointLight());
+  scene.add(createDirectionalLight());
+
+  const renderer = createRenderer();
+  renderer.render(scene, camera);
+
+  mainEl.current?.appendChild(renderer.domElement);
+
+  return { renderer, scene, camera, animations };
+};
+
+const createCamera = (config: IScene) => {
+  const camera = new PerspectiveCamera(config.camera?.fov, window.innerWidth / window.innerHeight);
+  camera.position.z = config.camera.position.z;
+  return camera;
+};
+
+const createAndAddMeshes = (config: IScene, scene: Scene) => {
+  const meshes = [];
   for (const meshConfig of config.meshes) {
     const mesh = createMesh(meshConfig);
     meshes.push({ name: meshConfig.name, mesh });
     scene.add(mesh);
   }
+  return meshes;
+};
 
-  scene.add(createPointLight());
-  scene.add(createDirectionalLight());
-
-  const renderer = new WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setClearColor(0x000000, 0);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = PCFSoftShadowMap;
-  renderer.render(scene, camera);
-  mainEl.current?.appendChild(renderer.domElement);
-
-  return { renderer, scene, camera, meshes };
+const createAnimations = (config: IScene, meshes: { name: string; mesh: Mesh }[]) => {
+  const animations = (
+    config.meshes
+      ?.map((meshConfig) => {
+        return meshConfig.animations?.map(
+          (animationName) => () => animationMap[animationName](meshes.find((m) => m.name === meshConfig.name)?.mesh!)
+        );
+      })
+      .flat() ?? []
+  ).filter((a) => !!a);
+  return animations;
 };
 
 const accelerateSphere = (sphere: Mesh, v0y: number = 0) => {
@@ -53,6 +72,15 @@ const accelerateSphere = (sphere: Mesh, v0y: number = 0) => {
     sphere.position.x = -4;
   }
   return () => accelerateSphere(sphere, vy);
+};
+
+const createRenderer = () => {
+  const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = PCFSoftShadowMap;
+  return renderer;
 };
 
 type InitialAnimationFunction = (mesh: Mesh, ...args: number[]) => AnimationFunction;
@@ -83,16 +111,7 @@ const Three = ({ config }: { config: IScene }) => {
   const mainEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const { renderer, scene, camera, meshes } = init(mainEl, config);
-    const animations = (
-      config.meshes
-        ?.map((meshConfig) => {
-          return meshConfig.animations?.map(
-            (animationName) => () => animationMap[animationName](meshes.find((m) => m.name === meshConfig.name)?.mesh!)
-          );
-        })
-        .flat() ?? []
-    ).filter((a) => !!a);
+    const { renderer, scene, camera, animations } = init(mainEl, config);
     const requestId = animate({ renderer, scene, camera, animations });
     return () => cancelAnimationFrame(requestId);
   }, [mainEl, config]);
