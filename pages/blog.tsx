@@ -4,6 +4,7 @@ import BlogPost from "../components/BlogPost";
 
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import apartment_picture from "../public/images/apartment.jpg";
+import big5ish_img from "../public/images/big5ish.png";
 import stock_graph_picture from "../public/images/stock_graph.png";
 
 const ShootingStars = dynamic(
@@ -23,6 +24,23 @@ const Blog = () => {
           </Link>{" "}
           hvis du er interessert i et prosjekt eller for å si hei 👋
         </div>
+        <BlogPost
+          id="big5ish-intro"
+          date="2023/02/17"
+          title="Big5ish - hvor godt kjenner du venner og kollegaer? 🧐"
+          picture={big5ish_img}
+          content={[
+            `Som en ivrig lytter av Big 5 med Nils og Harald på Podme, har jeg bygget Big5ish som er en nettbasert 
+        Big 5-test for grupper. Målet med testen er at noe av det Nils og Harald får til med sine gjester, skal kunne skapes 
+        av hvem som helst med egne venner og kollegaer.`,
+            `Testen fungerer ved at man får se hverandres svar og resultater fortløpende på en felles skjerm, mens man svarer på 
+        spørsmål om seg selv på sin egen mobiltelefon. Litt som en Kahoot. Deltakerne gjetter også underveis på de andres 
+        scorer på de ulike domenene. På denne måten får alle deltakerne testet egen personlighet, analysert gruppa som helhet 
+        og sammenlignet egne oppfatninger av de andre med hva resultatene i testen faktisk viser.`,
+            `Testen kan foreløpig sjekkes ut på:`,
+          ]}
+          externalUrl="https://big5ish.herokuapp.com/"
+        />
         <BlogPost id="bytter-til-norsk" date="2023/02/17" title="Bytter til norsk jeg ass." content={["🏴󠁧󠁢󠁥󠁮󠁧󠁿🇺🇸 ➡️ 🇳🇴"]} />
         <BlogPost
           id="freelance-y1"
