@@ -17,12 +17,13 @@ const Blog = () => {
       <ShootingStars />
       <div className="sm:container xl:px-60 mx-auto">
         <div className="text-center text-gray-500 rounded text-sm p-4 my-4">
-          I&apos;m Teodor Nilseng Danielsen. A Norwegian software engineer and economist. Send me an{" "}
+          Jeg er Teodor Nilseng Danielsen. En norsk konsulent og utvikler. Send meg{" "}
           <Link href="mailto:teodor.nilseng@gmail.com">
-            <a className="text-purple-500">email</a>
+            <a className="text-purple-500">mail</a>
           </Link>{" "}
-          if you&apos;re interested in one of my projects or just to say hi👋
+          hvis du er interessert i et prosjekt eller for å si hei 👋
         </div>
+        <BlogPost id="bytter-til-norsk" date="2023/02/17" title="Bytter til norsk jeg ass." content={["🏴󠁧󠁢󠁥󠁮󠁧󠁿🇺🇸 ➡️ 🇳🇴"]} />
         <BlogPost
           id="freelance-y1"
           date="2023/01/05"
