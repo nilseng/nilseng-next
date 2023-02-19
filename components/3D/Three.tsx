@@ -33,7 +33,9 @@ const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
 
 const createCamera = (config: IScene) => {
   const camera = new PerspectiveCamera(config.camera?.fov, window.innerWidth / window.innerHeight);
-  camera.position.z = config.camera.position.z;
+  if (config.camera.position.x) camera.position.x = config.camera.position.x;
+  if (config.camera.position.y) camera.position.y = config.camera.position.y;
+  if (config.camera.position.z) camera.position.z = config.camera.position.z;
   return camera;
 };
 
@@ -63,11 +65,11 @@ const createAnimations = (config: IScene, meshes: { name: string; mesh: Mesh }[]
 const accelerateSphere = (sphere: Mesh, v0y: number = 0) => {
   sphere.position.x += 0.025;
   sphere.position.y +=
-    sphere.position.y >= -1.5 || sphere.position.x > 2.5 ? v0y * (1 / 60) + (1 / 2) * -9.81 * Math.pow(1 / 60, 2) : 0;
+    sphere.position.y > -1.5 || sphere.position.x > 2.5 ? v0y * (1 / 60) + (1 / 2) * -9.81 * Math.pow(1 / 60, 2) : 0;
   const vy =
-    sphere.position.y > -4 && (sphere.position.y >= -1.5 || sphere.position.x > 2.5) ? v0y - 9.81 * (1 / 60) : 0;
+    sphere.position.y > -4 && (sphere.position.y > -1.5 || sphere.position.x > 2.5) ? v0y - 9.81 * (1 / 60) : 0;
   if (sphere.position.y < -4) {
-    sphere.position.y = 4;
+    sphere.position.y = 8;
     sphere.position.x = -4;
   }
   return () => accelerateSphere(sphere, vy);
