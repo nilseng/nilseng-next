@@ -49,7 +49,8 @@ export const createMesh = (config: IMeshConfig): THREE.Mesh => {
   if (config.position) {
     mesh.position.set(...config.position);
   }
-  if (config.receiveShadow) mesh.receiveShadow = config.receiveShadow;
+  if (config.receiveShadow) mesh.receiveShadow = true;
+  if (config.castShadow) mesh.castShadow = true;
   if (config.rotation) {
     const mappedRotation = config.rotation.map((r) => r * Math.PI) as [number, number, number];
     mesh.rotation.set(...mappedRotation);
@@ -59,19 +60,14 @@ export const createMesh = (config: IMeshConfig): THREE.Mesh => {
 
 export const createPointLight = () => {
   const pointLight = new PointLight(0xffffff, 2);
-  pointLight.position.set(-5, -10, 20);
+  pointLight.position.set(-5, -10, 0);
   pointLight.castShadow = true;
-
-  pointLight.shadow.mapSize.width = 2000;
-  pointLight.shadow.mapSize.height = 2000;
-  pointLight.shadow.camera.near = 0.5;
-  pointLight.shadow.camera.far = 500;
   return pointLight;
 };
 
 export const createDirectionalLight = () => {
   const directionalLight = new DirectionalLight(0xffffff, 1);
-  directionalLight.position.set(0, 480, 0);
+  directionalLight.position.set(0, 10, 0);
   directionalLight.castShadow = true;
   return directionalLight;
 };

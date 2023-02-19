@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Camera, Mesh, PCFSoftShadowMap, PerspectiveCamera, Scene, WebGLRenderer } from "three";
-import { createDirectionalLight, createMesh, createPointLight, IMeshConfig } from "./utils";
+import { createDirectionalLight, createMesh, IMeshConfig } from "./utils";
 
 export interface IScene {
   camera: {
@@ -21,7 +21,6 @@ const init = (mainEl: React.RefObject<HTMLDivElement>, config: IScene) => {
   const meshes = createAndAddMeshes(config, scene);
   const animations = createAnimations(config, meshes);
 
-  scene.add(createPointLight());
   scene.add(createDirectionalLight());
 
   const renderer = createRenderer();
