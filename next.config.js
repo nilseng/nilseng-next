@@ -4,4 +4,8 @@ module.exports = {
   images: {
     domains: [],
   },
+  webpack(config) {
+    config.resolve.fallback = { fs: false };
+    return config;
+  },
 };
