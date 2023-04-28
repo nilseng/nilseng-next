@@ -19,8 +19,8 @@ const Landing: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Teodor&apos;s Portfolio</title>
-        <meta name="description" content="Teodor's portfolio, blog and random stuff." />
+        <title>Teodor Nilseng Danielsen</title>
+        <meta name="description" content="Teodor Nilseng Danielsen" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -30,9 +30,10 @@ const Landing: NextPage = () => {
             <BlogPost
               title="aksjegrafen.com"
               content={[
-                `Aksjegrafen - Search for and find all Norwegian companies and their shareholders. See the data in a graph
-                 visualization.`,
-                `Built with Typescript, React, D3.js, Node.js, Express, MongoDB and more.`,
+                `På Aksjegrafen finner du alle Norges aksjonærer og aksjeselskaper. Søk blant selskapene, se direkte og
+                indirekte relasjoner, få oversikt over komplekse eierskapsstrukturer, se finansielle nøkkeltall eller koble deg 
+                på APIet for å analysere data direkte.`,
+                `Bygget med Typescript, React, D3.js, Node.js, Express, Redis og MongoDB.`,
               ]}
               picture={aksjegrafen_img}
             />
@@ -41,8 +42,12 @@ const Landing: NextPage = () => {
             <BlogPost
               title="Big5ish"
               content={[
-                `Big5ish - A personality test for teams based on the well known Big 5 test.`,
-                `Built with TypeScript, React, Tailwind, Node.js, Express, Apollo and Graphql.`,
+                `Big5ish er inspirert av podcasten Big 5 med Nils og Harald, og er en personlighetstest man kan ta sammen med 
+                venner og kollegaer. Målet er at noe av det samme som Nils Brenna og Harald Eia skaper med kjente personer skal 
+                kunne skapes av hvem som helst med de man selv omgås i hverdagen. Testen gjør at man forstår hvorfor folk 
+                oppfører seg som de gjør og hvilke behov de har. Dermed kan man legge til rette for bedre kommunikasjon og bedre 
+                samarbeid.`,
+                `Bygget med TypeScript, React, Tailwind, Node.js, Express, Apollo og Graphql.`,
               ]}
               picture={big5ish_img}
             />
@@ -51,8 +56,10 @@ const Landing: NextPage = () => {
             <BlogPost
               title="pureokrs.com"
               content={[
-                `Pure Objectives and Key Result - a goal management application.`,
-                `Stack: Angular, Node.js, Express, MongoDB`,
+                `PureOKRs (Pure Objectives and Key Result) er et verktøy for målstyringsmetodikken OKRs som blant annet har blitt 
+                brukt i Intel og Google. Metodikken har i stor grad blitt gjort kjent gjennom investoren John Doerr som også er 
+                forfatteren av Measure What Matters.`,
+                `PureOKRs er bygget med Angular, Node.js, Express og MongoDB.`,
               ]}
               picture={pureokrs_img}
             />
@@ -61,8 +68,9 @@ const Landing: NextPage = () => {
             <BlogPost
               title="backcountrybook.com"
               content={[
-                `BackcountryBook - an application for exploring and sharing backcountry skiing experiences. Share routes and images. Explore mountains in 2D or 3D.`,
-                `Built with React, Node.js, Express, MongoDB, AWS S3, Mapbox, Auth0 and more.`,
+                `BackcountryBook er en applikasjon for å dele egne og se andres toppturer på ski. Del bilder eller ruter i form av
+                GPX-filer. Utforsk fjell i 2D eller 3D.`,
+                `Siden er bygget med React, Node.js, Express, MongoDB, AWS S3, Mapbox og Auth0.`,
               ]}
               picture={bc_book_img}
             />
@@ -71,8 +79,9 @@ const Landing: NextPage = () => {
             <BlogPost
               title="purewacc.com"
               content={[
-                `Pure Weighted Average Cost of Capital - an application simplifying calculation and distribution of WACCs for multi market and multi industry projects.`,
-                `Stack: React, Node.js, Express, MongoDB`,
+                `PureWACC (Pure Weighted Average Cost of Capital) - er en applikasjon for å forenkle beregning og distribusjon 
+                av totalkapitalkostnad for prosjekter som skjer på tvers av markeder og industrier.`,
+                `Bygget med React, Node.js, Express og MongoDB.`,
               ]}
               picture={purewacc_img}
             />
