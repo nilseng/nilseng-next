@@ -38,7 +38,7 @@ const BlogPost = ({ date, title, content, picture, link, externalUrl, id }: IPro
           />
         </div>
       )}
-      <div className="text-gray-50 mt-4">
+      <div className="text-gray-50 text-sm mt-4">
         {content.map((paragraph, i) => (
           <p key={i} className="py-2">
             {paragraph}
@@ -46,7 +46,7 @@ const BlogPost = ({ date, title, content, picture, link, externalUrl, id }: IPro
         ))}
       </div>
       {externalUrl && (
-        <a href={externalUrl} target="_blank" rel="noreferrer" className="text-gray-50 text-sm">
+        <a href={externalUrl} target="_blank" rel="noreferrer" className="text-gray-50 text-xs">
           {externalUrl}
         </a>
       )}
