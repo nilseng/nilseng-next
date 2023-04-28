@@ -3,6 +3,7 @@ import Link from "next/link";
 import BlogPost from "../components/BlogPost";
 
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
+import aksjegrafen_api from "../public/images/aksjegrafen_api.png";
 import aksjegrafen_shortest_path from "../public/images/aksjegrafen_shortest_path.png";
 import apartment_picture from "../public/images/apartment.jpg";
 import big5ish_img from "../public/images/big5ish.png";
@@ -26,8 +27,28 @@ const Blog = () => {
           hvis du er interessert i et prosjekt eller for å si hei 👋
         </div>
         <BlogPost
-          id="aksjegrafen-korteste-vei"
+          id="aksjegrafen-api"
           date="2023/04/28"
+          title="Aksjegrafen - åpent API for aksjonærregisteret"
+          picture={aksjegrafen_api}
+          content={[
+            `
+          Det åpne API-et til aksjegrafen.com gir utviklere tilgang til all data om aksjonærer og selskaper i aksjonærregisteret. 
+          APIet gjør det mulig for tredjepartsapplikasjoner å integrere seg på en enkel måte. Ved å bruke API-et kan utviklere 
+          hente ut informasjon om aksjonærer i ulike selskaper, aksjonærstruktur og endringer i eierskap over tid. API-et kan 
+          brukes av både investorer og utviklere som ønsker å lage applikasjoner for å analysere og visualisere aksje- og 
+          eierskapsdata.
+          `,
+            `Følgende data er foreløpig tilgjengelig:`,
+            `- Søk etter selskap med organisasjonsnummer eller navn.`,
+            `- Søk etter aksjonær med organisasjonsnummer eller navn.`,
+            `- Hent investeringene til en gitt aksjonær.`,
+            `- Hent aksjonærene til et gitt selskap.`,
+          ]}
+        />
+        <BlogPost
+          id="aksjegrafen-korteste-vei"
+          date="2023/04/21"
           title="Aksjegrafen - finn relasjoner mellom norske aksjeselskaper"
           picture={aksjegrafen_shortest_path}
           content={[
