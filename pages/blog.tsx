@@ -3,6 +3,7 @@ import Link from "next/link";
 import BlogPost from "../components/BlogPost";
 
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
+import aksjegrafen_shortest_path from "../public/images/aksjegrafen_shortest_path.png";
 import apartment_picture from "../public/images/apartment.jpg";
 import big5ish_img from "../public/images/big5ish.png";
 import stock_graph_picture from "../public/images/stock_graph.png";
@@ -24,6 +25,20 @@ const Blog = () => {
           </Link>{" "}
           hvis du er interessert i et prosjekt eller for å si hei 👋
         </div>
+        <BlogPost
+          id="aksjegrafen-korteste-vei"
+          date="2023/04/28"
+          title="Aksjegrafen - finn relasjoner mellom norske aksjeselskaper"
+          picture={aksjegrafen_shortest_path}
+          content={[
+            `Aksjegrafen.com har nå lansert en ny funksjon som gjør det mulig å finne korteste vei mellom to selskaper. Denne 
+            funksjonen gir deg muligheten til å se hvordan to selskaper er knyttet sammen gjennom et nettverk av andre selskaper 
+            og roller.`,
+            `Funksjonen fungerer ved å analysere informasjon om eierskap og roller i ulike selskaper, og finne den korteste veien 
+            mellom to selskaper gjennom dette nettverket av relasjoner. Dette gir deg et bilde av hvordan to selskaper er 
+            knyttet sammen, og kan hjelpe deg med å identifisere mulige samarbeidspartnere, interessekonflikter eller annet.`,
+          ]}
+        />
         <BlogPost
           id="big5ish-intro"
           date="2023/02/17"
