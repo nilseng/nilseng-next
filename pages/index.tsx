@@ -7,6 +7,7 @@ import BlogPost from "../components/BlogPost";
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import bc_book_img from "../public/images/backcountrybook.png";
 import big5ish_img from "../public/images/big5ish.png";
+import norad_mateffekten from "../public/images/norad_mateffekten.png";
 import pureokrs_img from "../public/images/pureokrs.png";
 import purewacc_img from "../public/images/purewacc.png";
 
@@ -73,6 +74,22 @@ const Landing: NextPage = () => {
                 `Siden er bygget med React, Node.js, Express, MongoDB, AWS S3, Mapbox og Auth0.`,
               ]}
               picture={bc_book_img}
+            />
+          </a>
+          <a
+            href="https://www.fn.no/undervisning/undervisningsopplegg/5-7-trinn/mateffekten/lykkehjulet"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <BlogPost
+              title="Norads Mateffekten - ordmaskinen"
+              picture={norad_mateffekten}
+              content={[
+                `Mateffekten er et initiativ som fokuserer på bærekraftig matproduksjon. I samarbeid med Los&Co 
+              utviklet jeg ordmaskinen - to lykkehjul som sammen genererer et nyord. Ordmaskinen ble brukt som en del av
+              et undervisningsopplegg om temaet. Opplegget er et samarbeid mellom Norad og FN-sambandet.`,
+              ]}
             />
           </a>
           <a href="https://www.purewacc.com" target="__blank" style={{ textDecoration: "none" }}>
