@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
-
-import { INavPopoverProps, NavPopover } from "./NavPopover";
 import { AnimatedLogo } from "./AnimatedLogo";
+import { INavPopoverProps, NavPopover } from "./NavPopover";
 
 const randomFunPopover: INavPopoverProps = {
   buttonText: "Random fun",
@@ -48,7 +47,7 @@ export const Navbar = () => {
       <Link href="/">
         <a className="flex items-center">
           <AnimatedLogo color="#f8f9fa" height="2rem" width="2rem" />
-          <span className="font-light text-xl text-gray-50 mx-4">Teodor&apos;s Portfolio</span>
+          <span className="font-light text-xl text-gray-50 mx-4">Teodor Nilseng Danielsen</span>
         </a>
       </Link>
       <button
