@@ -12,14 +12,14 @@ const AboutMe = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className="absolute top-0 h-screen w-screen bg-gradient-to-r from-green-400 to-blue-600"
+        className="absolute top-0 h-full w-screen bg-gradient-to-r from-green-400 to-blue-600"
         style={{ zIndex: -10 }}
       ></div>
       <div
         className="absolute top-0 h-full w-screen bg-gradient-to-t from-yellow-100  overflow-scroll"
         style={{ zIndex: -2 }}
       ></div>
-      <div className="absolute top-0 flex flex-wrap h-screen w-screen overflow-scroll" style={{ zIndex: -1 }}>
+      <div className="absolute top-0 flex flex-wrap h-full w-screen overflow-scroll" style={{ zIndex: -1 }}>
         <div className="flex flex-col justify-center md:w-1/2 px-5 md:pr-20 pt-40 md:pt-0">
           <div className="relative text-gray-50 bg-white bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-20 border border-white border-opacity-40 rounded-3xl p-6 md:p-8">
             <div
