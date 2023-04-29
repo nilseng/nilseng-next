@@ -91,14 +91,6 @@ export const Navbar = () => {
               About me
             </a>
           </Link>
-          <Link href="/about-you">
-            <a
-              className="text-sm lg:inline-flex lg:w-auto w-full px-6 py-2 rounded text-gray-50 font-light items-center justify-center hover:text-white"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About you
-            </a>
-          </Link>
         </div>
       </div>
     </nav>

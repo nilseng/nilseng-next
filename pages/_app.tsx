@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { Navbar } from "../components/Navbar";
 import * as ga from "../lib/ga";
 
-import "mapbox-gl/dist/mapbox-gl.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import "../styles/globals.scss";
