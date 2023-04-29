@@ -16,7 +16,7 @@ const AboutMe = () => {
         style={{ zIndex: -10 }}
       ></div>
       <div
-        className="absolute top-0 h-screen w-screen bg-gradient-to-t from-yellow-100  overflow-scroll"
+        className="absolute top-0 h-full w-screen bg-gradient-to-t from-yellow-100  overflow-scroll"
         style={{ zIndex: -2 }}
       ></div>
       <div className="absolute top-0 flex flex-wrap h-screen w-screen overflow-scroll" style={{ zIndex: -1 }}>
