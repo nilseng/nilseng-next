@@ -34,7 +34,7 @@ const Landing: NextPage = () => {
                 `På Aksjegrafen finner du alle Norges aksjonærer og aksjeselskaper. Søk blant selskapene, se direkte og
                 indirekte relasjoner, få oversikt over komplekse eierskapsstrukturer, se finansielle nøkkeltall eller koble deg 
                 på APIet for å analysere data direkte.`,
-                `Bygget med Typescript, React, D3.js, Node.js, Express, Redis og MongoDB.`,
+                `Bygget med TypeScript, React, D3.js, Node.js, Express, Redis og MongoDB.`,
               ]}
               picture={aksjegrafen_img}
             />
