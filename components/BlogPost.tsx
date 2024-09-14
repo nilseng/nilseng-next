@@ -17,7 +17,7 @@ const BlogPost = ({ date, title, content, picture, link, externalUrl, id }: IPro
   return (
     <div
       id={id}
-      className="w-full relative sm:p-10 p-6 my-8"
+      className="w-full relative rounded-md sm:p-10 p-6 my-8"
       onClick={() => (link ? router.push(link) : null)}
       style={{
         cursor: link ? "pointer" : "",
@@ -33,7 +33,7 @@ const BlogPost = ({ date, title, content, picture, link, externalUrl, id }: IPro
             quality={100}
             placeholder="blur"
             lazyBoundary="500px"
-            className="pb-8"
+            className="rounded-md pb-8"
             alt={`${title} image`}
           />
         </div>
