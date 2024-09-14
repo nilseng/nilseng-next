@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import BlogPost from "../components/BlogPost";
 
+import ag_shortest_path from "../public/images/ag_shortest_path.png";
 import aksjegrafen_img from "../public/images/aksjegrafen.png";
 import aksjegrafen_api from "../public/images/aksjegrafen_api.png";
 import aksjegrafen_shortest_path from "../public/images/aksjegrafen_shortest_path.png";
@@ -26,6 +27,20 @@ const Blog = () => {
           </Link>{" "}
           hvis du er interessert i et prosjekt eller for å si hei 👋
         </div>
+        <BlogPost
+          id="aksjegrafen-neo4j"
+          date="2024/09/14"
+          title="Aksjegrafen - søk med grafteknologi 🔍🕸️"
+          picture={ag_shortest_path}
+          content={[
+            `
+          Aksjegrafen bruker grafdatabasen Neo4j - en database som er spesielt egnet for å lagre data som er strukturert
+          som nettverk. Nettverk kalles i matematikken for grafer - derav Aksjegrafen. Fordelen med en grafdatabase er at man
+          kan gjøre raske nettverkssøk. Slike søk kan brukes til for eksempel å finne ut hvem som reelt sett eier et selskap
+          til tross for komplekse eierskapsstrukturer. 
+          `,
+          ]}
+        />
         <BlogPost
           id="aksjegrafen-api"
           date="2023/04/28"
