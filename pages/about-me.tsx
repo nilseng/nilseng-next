@@ -57,19 +57,6 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center w-full md:w-1/2 text-gray-700 p-10">
-          <p className="pb-4">Som Chat GPT sier det:</p>
-          <p>
-            Jeg heter Teodor Nilseng Danielsen og er en full-stack programvareutvikler med over 3 års erfaring. I
-            tillegg til min bakgrunn som utvikler, har jeg 4 års erfaring som rådgiver og forretningsutvikler, samt et
-            års erfaring med business intelligence - i hovedsak Power BI. Jeg har en mastergrad i Industriell teknologi
-            og økonomiledelse fra NTNU, og har jobbet for store organisasjoner som Kongsberg Digital, Telenor Group og
-            DNB. Jeg har den siste tiden jobbet mest med TypeScript, Angular, React, Node.js og MongoDB, og har også
-            erfaring med Python og Java. Jeg har jobbet i ulike bransjer, inkludert finans, olje og gass og
-            telekommunikasjon, og jeg er opptatt av å bygge kvalitetsnettapplikasjoner som løser virkelige problemer. Ta
-            gjerne en titt på min portefølje for å se noen av mine nylige prosjekter.
-          </p>
-        </div>
       </div>
     </>
   );
